@@ -1,0 +1,11 @@
+*.orig
+*.LOG
+
+# Python cache files
+*.pyc
+venv/
+.idea/
+ 
+#Flash setup
+sdkconfig
+
