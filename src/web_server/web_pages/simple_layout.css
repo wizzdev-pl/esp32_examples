@@ -1,0 +1,166 @@
+div.page_grid {
+    display : block;
+    min-width: 650px;
+    max-width: 1200px;
+    overflow : auto;
+    margin : 30px auto 0 auto;
+    border: 1px solid gray;
+    background-color: lemonchiffon;
+}
+
+header {
+    clear: left;
+    text-align: left;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-left: 20px;
+    border-bottom: 1px solid gray;
+}
+
+header .logo {
+    height: 54px;
+    float: left;
+    margin-left: 150px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+header .title{
+    color: black;
+    font-size: 50px;
+    padding: 10;
+}
+
+
+footer {
+    padding: 1px;
+    color: black;
+    clear: left;
+    text-align: center;
+}
+
+.footerAutorefresh {
+    color: black;
+    clear: left;
+    text-align: right;
+}
+
+
+nav {
+    float: left;
+    width: 170px;
+    margin: 0;
+    padding: 1em;
+    min-height: 400px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;  
+}
+
+nav ul li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: white;
+    cursor: pointer; cursor: hand;
+}
+
+section {
+    margin-left: 180px;
+    padding: 40px;
+    overflow: hidden;
+    min-height: 400px; 
+    background-color: white;
+}
+
+section ol li{
+    font-size: 100%;
+}
+
+section ol li Session_Name {
+    display: block;
+    color: #000;
+    padding: 2px 12px;
+    text-decoration: none;
+}
+
+pre {
+    margin: 0px;
+    padding: 0px 0px;
+    min-width: 0px;
+}
+
+.devices_table tr:nth-child(even) {background: #FFF}
+.devices_table tr:nth-child(odd) {background: #EEF}
+
+.clickText {
+    color: black;
+}
+
+.clickText:hover {
+    cursor: pointer; cursor: hand;
+    text-decoration:underline;
+}
+
+input
+{
+    margin:1px;
+    margin-left: 5px;
+    padding: 5px 4px;
+    min-width: 158px;
+}
+
+select
+{
+    margin:1px;
+    margin-left: 5px;
+    padding: 5px 4px;
+    min-width: 170px;
+}
+
+textarea
+{
+    min-width: 310px;
+    margin:1px;
+    margin-left: 5px;
+}
+
+.smallInput
+{
+    margin-right: 5px;
+    margin-bottom: 3px;
+    padding: 0px 0px;
+    min-width: 0px;
+    vertical-align: bottom;
+}
+
+button
+{
+    margin:4px;
+    margin-top: 10px;
+    padding: 6px 8px;
+}
+
+.devices_table{
+    width:100%; 
+    border-collapse:collapse; 
+}
+.devices_table td{ 
+    padding:7px; border:#4e95f4 1px solid;
+}
+/* Define the default color for all the table rows */
+.devices_table tr{
+    background: #b8d1f3;
+}
+/* Define the hover highlight color for the table row */
+.devices_table tr:hover {
+      background-color: #ffff99;
+}
