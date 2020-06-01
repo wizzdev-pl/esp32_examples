@@ -35,6 +35,14 @@ python3 scripts/upload_scripts.py
 ```
 You need to upload MicroPython firmware only once. After uploading scripts to esp32 press "EN" button.
 
+## Viewing website hosted on ESP:
+
+After the scripts are uploaded, on every startup ESP will act as an Wifi Access Point (AP) with SSID: **Wizzdev AP** that you can connect to. 
+
+When connected to AP, open http://192.168.4.1/  (this is the board's default IP address)
+in your browser and you will see a simple website that is being hosted on ESP. 
+
+
 ## Displaying output from MicroPython
 To display output from esp32 serial port run command:
 ```
