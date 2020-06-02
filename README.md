@@ -13,7 +13,8 @@ Before starting, you will need:
 - user added to dialout group
 
 ## Getting this repository
-    Add links from bitbucket
+
+    git clone git@github.com:wizzdev-pl/esp32_examples.git
 
 ## Environment setup
 To setup python environment with required tools use:
