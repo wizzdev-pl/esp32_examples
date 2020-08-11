@@ -1,6 +1,10 @@
 import network
+import time
 
 MIN_PASSWORD_LENGTH = 8
+WIFI_CONNECTION_MAX_NUMBER_OF_RETRIES = 10
+WIFI_CONNECTION_CHECK_SLEEP_TIME_S = 1
+
 
 def configure_AP(ssid, password=None):
     ap_handler = network.WLAN(network.AP_IF)
@@ -27,4 +31,15 @@ def configure_STA(ssid, password):
         sta_handler.connect(ssid, password)
     except:
         return None
-    return sta_handler
+
+    number_of_retries_connection = 0
+
+    while not sta_handler.isconnected():
+        time.sleep(WIFI_CONNECTION_CHECK_SLEEP_TIME_S)
+        number_of_retries_connection += 1
+        if number_of_retries_connection >= WIFI_CONNECTION_MAX_NUMBER_OF_RETRIES:
+            break
+
+    if sta_handler.isconnected():
+        sta_handler.ifconfig()
+        return sta_handler
