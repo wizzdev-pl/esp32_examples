@@ -1,5 +1,6 @@
 import logging
 import utime
+import ujson
 
 from web_server import web_app
 from communication.wirerless_connection import configure_AP, configure_STA
@@ -27,27 +28,27 @@ You must input a valid WiFi network settings, configure AWS IoT core, and downlo
 All of this was described in blog post on WizzDev's page: https://wizzdev.pl/blog/how-to-send-data-from-iot-device-to-aws-cloud/
 '''
 def example_sending_mqtt():
-    #Configure your WiFI connection
-    ssid = 'ssid'
+    #Configure YOUR WiFI connection
+    ssid = 'wifi_ssid'
     password = 'password'
     sta_handler = configure_STA(ssid, password)
 
     if sta_handler:
         cert_data = read_certificate()                      # make sure the certificate has been created and uploaded to device first!
-        aws_endpoint = 'endpoint'    # change this to your actual ENDPOINT!
+        aws_endpoint = 'xxxxxxxxxxxxxxxxx.region.amazonaws.com'    # change this to your actual ENDPOINT!
 
         if sta_handler.isconnected():
             # connect to mqtt broker and send message:
             try:
-                mqtt_client = connect_to_mqtt_broker(client_id='choose_your_fighter',
+                mqtt_client = connect_to_mqtt_broker(client_id='blog_test',
                                                      aws_endpoint=aws_endpoint,
                                                      key_str=cert_data['key'],
                                                      cert_str=cert_data['cert'])
-            except:
-                logging.error('Could not connect to MQTT broker!')
+            except Exception as e:
+                logging.error('Could not connect to MQTT broker! Reason {}'.format(str(e)))
             else:
                 message = {'name': 'Myfirst MQTT message', 'id': 1}
-                mqtt_client.publish(topic='example', msg=message)
+                mqtt_client.publish(topic='example', msg=ujson.dumps(message))
 
 
 def main():
