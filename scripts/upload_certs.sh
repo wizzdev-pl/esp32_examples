@@ -21,5 +21,6 @@ echo "Uploading device cert..."
 ampy --port "$PORT" put cert/cert.crt cert/cert.crt
 echo "Uploading private key..."
 ampy --port "$PORT" put cert/priv.key cert/priv.key
-echo "Uploading ca_cert key..."
-ampy --port "$PORT" put cert/cacert.pem cert/cacert.pem
+#echo "Uploading ca_cert key..."
+#ampy --port "$PORT" put cert/cacert.pem cert/cacert.pem
+echo "Done"
